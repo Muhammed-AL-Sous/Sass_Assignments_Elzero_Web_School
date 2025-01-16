@@ -1,0 +1,13 @@
+.parent {
+  // & Refers to .parent
+  // + Next Element
+  & + .sibling {
+    margin: auto {
+      top: 10px;
+    }
+    // ~ Sibling Selector
+    & ~ .last {
+      padding: 10px;
+    }
+  }
+}
