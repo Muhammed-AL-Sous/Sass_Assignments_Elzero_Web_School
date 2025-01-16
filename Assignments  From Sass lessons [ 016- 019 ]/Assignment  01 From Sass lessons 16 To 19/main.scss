@@ -1,0 +1,15 @@
+$num: 2;
+$start: 100;
+
+@function double($size) {
+  @return $size * $num;
+}
+
+@for $i from 0 through 4 {
+  $current: $start * pow($num, $i);
+
+  .box-#{$current} {
+    width: #{$current}px;
+    height: #{double($current)}px;
+  }
+}
