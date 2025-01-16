@@ -1,0 +1,98 @@
+$top: "top";
+$right: "right";
+$bottom: "bottom";
+$left: "left";
+
+.element {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 2px solid saddlebrown;
+  margin: 20px auto;
+}
+
+@mixin arrow($top) {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  left: 50%;
+  top: -40px;
+  border-bottom-color: red;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.element {
+  &:before {
+    @include arrow("top");
+  }
+}
+
+/////////////////////////////
+
+@mixin arrow($right) {
+    content: "";
+    position: absolute;
+    border: 20px solid transparent;
+    top: 50%;
+    right: -40px;
+    border-left-color: red;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
+
+  .element {
+    &:before {
+      @include arrow("right");
+    }
+  }
+
+/////////////////////////////
+
+@mixin arrow($bottom) {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  left: 50%;
+  bottom: -40px;
+  border-top-color: red;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.element {
+  &:before {
+    @include arrow("bottom");
+  }
+}
+
+//   /////////////////////////////
+
+@mixin arrow($left) {
+  content: "";
+  position: absolute;
+  border: 20px solid transparent;
+  top: 50%;
+  left: -40px;
+  border-right-color: red;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.element {
+  &:before {
+    @include arrow("left");
+  }
+}
